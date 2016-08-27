@@ -7,6 +7,18 @@ import java.awt.*;
  * Created by Marcin on 2016-08-26.
  */
 public class HomeDrawing extends JPanel {
+
+    private Rectangle pokojA = new Rectangle();
+//    to samo dla kolejnych pokoi
+
+    public Rectangle getPokojA() {
+        return pokojA;
+    }
+
+    public void setPokojA(Rectangle pokojA) {
+        this.pokojA = pokojA;
+    }
+
     private void doDrawing(Graphics g){
 
         Graphics2D home = (Graphics2D) g;
@@ -25,6 +37,7 @@ public class HomeDrawing extends JPanel {
 
 
 
+
         //NAZWY POKOI
         setLayout(null);
         nazwaPokoju("SALON",145,500,45,20);
@@ -34,6 +47,8 @@ public class HomeDrawing extends JPanel {
         nazwaPokoju("SYPIALNIA",165,200,65,20);
 
     }
+
+
 
     @Override
     public void paintComponent(Graphics g){
