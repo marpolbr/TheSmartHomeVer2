@@ -3,13 +3,10 @@ package com.marpolbr;
 import javax.swing.*;
 import java.awt.*;
 
-/**
- * Created by Marcin on 2016-08-26.
- */
 public class HomeDrawing extends JPanel {
 
     private Rectangle pokojA = new Rectangle();
-//    to samo dla kolejnych pokoi
+    //TODO: to samo dla kolejnych pokoi
 
     public Rectangle getPokojA() {
         return pokojA;
@@ -34,10 +31,6 @@ public class HomeDrawing extends JPanel {
         home.drawRect(40+560/x2*8,40+560 / y2 * 8, 560 / x2 * 4, 560 / y2 * 12);
         home.drawRect(40+560/x2*12,40+560/y2*8,560/x2*6,560/y2*12);
 
-
-
-
-
         //NAZWY POKOI
         setLayout(null);
         nazwaPokoju("SALON",145,500,45,20);
@@ -47,8 +40,6 @@ public class HomeDrawing extends JPanel {
         nazwaPokoju("SYPIALNIA",165,200,65,20);
 
     }
-
-
 
     @Override
     public void paintComponent(Graphics g){

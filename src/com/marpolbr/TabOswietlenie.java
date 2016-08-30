@@ -44,7 +44,7 @@ public class TabOswietlenie extends JPanel {
                     pokoje[i]);
         }
     }
-
+//TODO: Napis OSWIETLENIE oraz checkboxy umieszczone niezgodnie z pozycja absolutna, prawdopodobnie dziala Layout domyslny
     public void stworzCheckboxa(String nazwa, int x1, int y1, int xOkno, int yOkno, JPanel pokoj) {
         JCheckBox checkBox = new JCheckBox(nazwa, false);
         checkBox.setBounds(x1, y1, xOkno, yOkno);

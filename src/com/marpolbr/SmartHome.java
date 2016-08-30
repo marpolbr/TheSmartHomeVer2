@@ -1,7 +1,5 @@
 package com.marpolbr;
 
-import org.w3c.dom.css.Rect;
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -21,7 +19,6 @@ public class SmartHome extends JFrame {
     // Wymiary
     public static final int xRozmiarOkna   = 1300;
     public static final int xSrodekEkranu  = xRozmiarOkna/2;
-
 
     // Jpanele
     JPanel pokojA;
@@ -56,14 +53,13 @@ public class SmartHome extends JFrame {
         pokojD = dodajPokoj(pokojD, home1);
         pokojE = dodajPokoj(pokojE, home1);
 
-
-        //NAZWY OKIEN - PO DODANIU èLE FUNKCJONUJE LAYOUT
+        //NAZWY OKIEN TODO: PO DODANIU èLE FUNKCJONUJE LAYOUT
         JLabel oknoSym = new JLabel("OKNO SYMULACJI");
         add(oknoSym);
         oknoSym.setFont(duzyNapis);
         oknoSym.setBounds(270,0,150,30);
         oknoSym.setBackground(kolorOkien);
-        oknoSym.setOpaque(true); //moøliwoúÊ ustawienie koloru, domyúlnie jest transparentny
+        oknoSym.setOpaque(true); //moøliwoúÊ ustawienia koloru, domyúlnie jest transparentny
 
         JLabel oknoUst = new JLabel("USTAWIENIA");
         add(oknoUst);
@@ -91,10 +87,10 @@ public class SmartHome extends JFrame {
 
         // Dodanie zakladek
         tabbedPane = new JTabbedPane();
-        tabbedPane.setBounds(700,100,500,500);
+        tabbedPane.setBounds(653,40,639,573);
         JPanel[] pokoje = {pokojA, pokojB ,pokojC, pokojD, pokojE};
-        tabbedPane.addTab( "TabOswietlenie", new TabOswietlenie(pokoje) );
-        tabbedPane.addTab( "Page 2", new JPanel() );
+        tabbedPane.addTab( "Oswietlenie", new TabOswietlenie(pokoje) );
+        tabbedPane.addTab( "Temperatura", new JPanel() );
         tabbedPane.addTab( "Page 3", new JPanel() );
         add(tabbedPane, BorderLayout.CENTER);
     }
@@ -131,7 +127,6 @@ public class SmartHome extends JFrame {
         przyciskStart.setToolTipText("Start symulacji");
         add(przyciskStart);
     }
-
 
     public JPanel dodajPokoj(JPanel pokoj, JPanel dom){
         pokoj = new JPanel();
