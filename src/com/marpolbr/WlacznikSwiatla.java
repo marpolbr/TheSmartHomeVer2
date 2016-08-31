@@ -14,6 +14,7 @@ public class WlacznikSwiatla implements ItemListener {
         this.pokoj = pokoj;
     }
 
+
     @Override
     public void itemStateChanged(ItemEvent e){
         int status = e.getStateChange();

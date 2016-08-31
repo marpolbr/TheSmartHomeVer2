@@ -12,7 +12,7 @@ public class PodzielOkna extends JPanel {
         liniaDzielaca.setStroke(new BasicStroke(2));
         liniaDzielaca.drawLine(0,0,0,700);
     }
-
+    
     @Override
     public void paintComponent(Graphics g){
         super.paintComponent(g);

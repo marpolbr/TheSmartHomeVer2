@@ -47,6 +47,7 @@ public class HomeDrawing extends JPanel {
         doDrawing(g);
     }
 
+
     // metoda do dodawania nazw pokoi
     public void nazwaPokoju(String napis, int x1, int y1, int x2,int y2){
         JLabel nazwaPokoju = new JLabel(napis);

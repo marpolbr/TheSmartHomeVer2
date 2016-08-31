@@ -9,3 +9,4 @@ import java.awt.*;
 public class HomeOptions extends JPanel {
     //TUTAJ BÊD¥ USTAWIENIA
     }
+
