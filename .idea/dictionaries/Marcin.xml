@@ -5,10 +5,12 @@
       <w>aktualnie</w>
       <w>aktualny</w>
       <w>aplikacja</w>
+      <w>aplikacji</w>
       <w>bedzie</w>
       <w>będą</w>
       <w>checkboxa</w>
       <w>checkboxy</w>
+      <w>dlugosc</w>
       <w>dodaj</w>
       <w>dodanie</w>
       <w>dodaniu</w>
@@ -17,6 +19,8 @@
       <w>domyslny</w>
       <w>domyślnie</w>
       <w>dotyczace</w>
+      <w>drugiego</w>
+      <w>drzwi</w>
       <w>duzy</w>
       <w>dziala</w>
       <w>dzielaca</w>
@@ -41,11 +45,14 @@
       <w>mieszkania</w>
       <w>możliwość</w>
       <w>napis</w>
+      <w>napisu</w>
       <w>napisy</w>
       <w>nazw</w>
       <w>nazwa</w>
       <w>nazwy</w>
       <w>niezgodnie</w>
+      <w>nizej</w>
+      <w>odjac</w>
       <w>odstep</w>
       <w>okien</w>
       <w>okna</w>
@@ -54,6 +61,7 @@
       <w>oraz</w>
       <w>oswietlenia</w>
       <w>oswietlenie</w>
+      <w>pierwszego</w>
       <w>poczatek</w>
       <w>podział</w>
       <w>podziel</w>
@@ -86,6 +94,7 @@
       <w>umieszczone</w>
       <w>ustawienia</w>
       <w>ustawienie</w>
+      <w>usunac</w>
       <w>utworzenie</w>
       <w>uzytkownik</w>
       <w>widok</w>
@@ -99,6 +108,7 @@
       <w>zakladki</w>
       <w>zawierac</w>
       <w>znajduje</w>
+      <w>zrobic</w>
     </words>
   </dictionary>
 </component>

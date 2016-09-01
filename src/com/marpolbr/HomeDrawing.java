@@ -54,7 +54,7 @@ public class HomeDrawing extends JPanel {
         add(nazwaPokoju);
         nazwaPokoju.setFont(new Font("Serif", Font.BOLD, 12));
         nazwaPokoju.setBounds(x1,y1,x2,y2);
-        nazwaPokoju.setBackground(new Color(143, 225, 231));
+        //nazwaPokoju.setBackground(new Color(143, 225, 231));
         nazwaPokoju.setOpaque(true);
     }
 

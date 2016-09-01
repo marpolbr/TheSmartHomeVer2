@@ -12,14 +12,24 @@ public class SmartHome extends JFrame {
     // Kolory
     public static final Color kolorOkien       = new Color(231, 223, 114);
     public static final Color kolorTla         = new Color(143, 225, 231);
-    public static final Color kolorHomeOptions = new Color(130, 100, 84);
 
     // Napisy
-    public static final Font duzyNapis = new Font("Serif",Font.BOLD,16);
+    public static final Font duzyNapis        = new Font("Serif",Font.BOLD,16);
+    public static final int wysokoscDuzyNapis = 30;
+    public static final int yDuzyNapis        = 0;
 
     // Wymiary
     public static final int xRozmiarOkna   = 1300;
     public static final int xSrodekEkranu  = xRozmiarOkna/2;
+    public static final int yRozmiarOkna   = 700;
+    public static final int ySrodekEkranu  = xRozmiarOkna/2;
+
+    //Nazwy okien
+    public static final String nazwaAplikacji          = "Aplikacja dom inteligentny";
+    public static final String nazwaPierwszegoOkna     = "OKNO SYMULACJI";
+    public static final int dlugoscNazwyPierwszegoOkna = 145;
+    public static final String nazwaDrugiegoOkna       = "USTAWIENIA";
+    public static final int dlugoscNazwyDrugiegoOkna   = 105;
 
     // Jpanele
     JPanel pokojA;
@@ -28,7 +38,7 @@ public class SmartHome extends JFrame {
     JPanel pokojD;
     JPanel pokojE;
 
-    // Tabsy
+    // Zakladki
     private	JTabbedPane tabbedPane;
 
     public SmartHome(){
@@ -42,11 +52,15 @@ public class SmartHome extends JFrame {
         dodajInformacje();
         dodajStart();
 
+        //Nazwy okien
+        dodajNazwyOkien(nazwaPierwszegoOkna,(xSrodekEkranu/2-dlugoscNazwyPierwszegoOkna/2), dlugoscNazwyPierwszegoOkna);
+        dodajNazwyOkien(nazwaDrugiegoOkna,(xRozmiarOkna-xSrodekEkranu/2-dlugoscNazwyDrugiegoOkna/2), dlugoscNazwyDrugiegoOkna);
+
         // Widok mieszkania (rysowanie domu)
         HomeDrawing home1 = new HomeDrawing();
         add(home1);
-        home1.setBounds(0,30,648,700);
-        home1.setBackground(kolorTla);
+        home1.setBounds(0,30,xRozmiarOkna/2,yRozmiarOkna);
+        //home1.setBackground(kolorTla);
 
         pokojA = dodajPokoj(pokojA, home1);
         pokojB = dodajPokoj(pokojB, home1);
@@ -54,34 +68,9 @@ public class SmartHome extends JFrame {
         pokojD = dodajPokoj(pokojD, home1);
         pokojE = dodajPokoj(pokojE, home1);
 
-        //NAZWY OKIEN TODO: PO DODANIU èLE FUNKCJONUJE LAYOUT
-        JLabel oknoSym = new JLabel("OKNO SYMULACJI");
-        add(oknoSym);
-        oknoSym.setFont(duzyNapis);
-        oknoSym.setBounds(270,0,150,30);
-        oknoSym.setBackground(kolorOkien);
-        oknoSym.setOpaque(true); //moøliwoúÊ ustawienia koloru, domyúlnie jest transparentny
-
-        JLabel oknoUst = new JLabel("USTAWIENIA");
-        add(oknoUst);
-        oknoUst.setFont(duzyNapis);
-        oknoUst.setBounds(950,0,110,30);
-        oknoUst.setBackground(kolorOkien);
-        oknoUst.setOpaque(true);
-
-        //Podzia≥ okna
-        PodzielOkna podziel = new PodzielOkna();
-        add(podziel);
-        podziel.setBounds(650,0,2,700);
-        //HomeOptions
-        HomeOptions opt1 = new HomeOptions();
-        add(opt1);
-        opt1.setBounds(652,615,650,70);
-        opt1.setBackground(kolorHomeOptions);
-
         //utworzenie ramki
-        setTitle("Aplikacja dom inteligentny");
-        setSize(1300, 700);
+        setTitle(nazwaAplikacji);
+        setSize(xRozmiarOkna, yRozmiarOkna);
         setResizable(false);
         setLocationRelativeTo(null);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -92,7 +81,8 @@ public class SmartHome extends JFrame {
         JPanel[] pokoje = {pokojA, pokojB ,pokojC, pokojD, pokojE};
         tabbedPane.addTab( "Oswietlenie", new TabOswietlenie(pokoje) );
         tabbedPane.addTab( "Temperatura", new JPanel() );
-        tabbedPane.addTab( "Page 3", new JPanel() );
+        tabbedPane.addTab( "Okna/drzwi", new JPanel() );
+        tabbedPane.addTab( "Alarm", new JPanel() );
         add(tabbedPane, BorderLayout.CENTER);
     }
 
@@ -134,5 +124,14 @@ public class SmartHome extends JFrame {
         pokoj.setBackground(Color.RED);
         dom.add(pokoj);
         return pokoj;
+    }
+
+    public void dodajNazwyOkien(String nazwa, int x1, int x2){
+        JLabel nazwaOkna = new JLabel(nazwa);
+        nazwaOkna.setFont(duzyNapis);
+        nazwaOkna.setBounds(x1, yDuzyNapis, x2, wysokoscDuzyNapis);
+        nazwaOkna.setBackground(kolorOkien);
+        nazwaOkna.setOpaque(true); //moøliwoúÊ ustawienia koloru, domyúlnie jest transparentny
+        add(nazwaOkna);
     }
 }
