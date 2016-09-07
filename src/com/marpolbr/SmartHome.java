@@ -31,6 +31,7 @@ public class SmartHome extends JFrame {
     public static final String nazwaDrugiegoOkna       = "USTAWIENIA";
     public static final int dlugoscNazwyDrugiegoOkna   = 105;
 
+
     // Jpanele
     JPanel pokojA;
     JPanel pokojB;
@@ -60,7 +61,7 @@ public class SmartHome extends JFrame {
         HomeDrawing home1 = new HomeDrawing();
         add(home1);
         home1.setBounds(0,30,xRozmiarOkna/2,yRozmiarOkna);
-        //home1.setBackground(kolorTla);
+        home1.setBackground(kolorTla);
 
         pokojA = dodajPokoj(pokojA, home1);
         pokojB = dodajPokoj(pokojB, home1);
@@ -83,7 +84,7 @@ public class SmartHome extends JFrame {
         tabbedPane.addTab( "Temperatura", new JPanel() );
         tabbedPane.addTab( "Okna/drzwi", new JPanel() );
         tabbedPane.addTab( "Alarm", new JPanel() );
-        add(tabbedPane, BorderLayout.CENTER);
+        add(tabbedPane);
     }
 
     public static void main(String[] args) {
@@ -134,4 +135,5 @@ public class SmartHome extends JFrame {
         nazwaOkna.setOpaque(true); //mo¿liwoœæ ustawienia koloru, domyœlnie jest transparentny
         add(nazwaOkna);
     }
+
 }

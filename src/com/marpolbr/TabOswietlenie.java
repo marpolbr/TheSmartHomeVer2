@@ -18,17 +18,7 @@ public class TabOswietlenie extends JPanel {
 
     public TabOswietlenie(JPanel[] pokoje){
         this.pokoje = pokoje;
-        dodajOswietlenie();
         dodajListePokoiOswietlenia();
-    }
-
-    public void dodajOswietlenie() {
-        JLabel napisOswietlenie = new JLabel("OSWIETLENIE");
-        add(napisOswietlenie);
-        napisOswietlenie.setFont(SmartHome.duzyNapis);
-        napisOswietlenie.setBounds(700,200,110,30);
-        napisOswietlenie.setBackground(SmartHome.kolorOkien);
-        napisOswietlenie.setOpaque(true);
     }
 
     public void dodajListePokoiOswietlenia() {
@@ -45,7 +35,7 @@ public class TabOswietlenie extends JPanel {
         }
     }
 
-//TODO: Napis OSWIETLENIE oraz checkboxy umieszczone niezgodnie z pozycja absolutna, prawdopodobnie dziala Layout domyslny
+//TODO: Checkboxy umieszczone niezgodnie z pozycja absolutna, prawdopodobnie dziala Layout domyslny
     public void stworzCheckboxa(String nazwa, int x1, int y1, int xOkno, int yOkno, JPanel pokoj) {
         JCheckBox checkBox = new JCheckBox(nazwa, false);
         checkBox.setBounds(x1, y1, xOkno, yOkno);
