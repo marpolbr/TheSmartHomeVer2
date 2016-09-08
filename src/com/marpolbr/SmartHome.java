@@ -58,16 +58,29 @@ public class SmartHome extends JFrame {
         dodajNazwyOkien(nazwaDrugiegoOkna,(xRozmiarOkna-xSrodekEkranu/2-dlugoscNazwyDrugiegoOkna/2), dlugoscNazwyDrugiegoOkna);
 
         // Widok mieszkania (rysowanie domu)
-        HomeDrawing home1 = new HomeDrawing();
-        add(home1);
-        home1.setBounds(0,30,xRozmiarOkna/2,yRozmiarOkna);
-        home1.setBackground(kolorTla);
+        HomeDrawing rzutDomu = new HomeDrawing();
+        add(rzutDomu);
+        rzutDomu.setBounds(0, 30, xRozmiarOkna / 2, yRozmiarOkna);
+        rzutDomu.setBackground(kolorTla);
 
-        pokojA = dodajPokoj(pokojA, home1);
-        pokojB = dodajPokoj(pokojB, home1);
-        pokojC = dodajPokoj(pokojC, home1);
-        pokojD = dodajPokoj(pokojD, home1);
-        pokojE = dodajPokoj(pokojE, home1);
+        pokojA = dodajPokoj(pokojA, rzutDomu);
+        pokojB = dodajPokoj(pokojB, rzutDomu);
+        pokojC = dodajPokoj(pokojC, rzutDomu);
+        pokojD = dodajPokoj(pokojD, rzutDomu);
+        pokojE = dodajPokoj(pokojE, rzutDomu);
+
+
+
+
+        // Dodanie zakladek
+        tabbedPane = new JTabbedPane();
+        tabbedPane.setBounds(653,40,639,573);
+        JPanel[] pokoje = {pokojA, pokojB ,pokojC, pokojD, pokojE};
+        tabbedPane.addTab( "Oswietlenie", new TabOswietlenie(pokoje));
+        tabbedPane.addTab( "Temperatura",new TabTemperatura());
+        tabbedPane.addTab( "Okna", new JPanel() );
+        tabbedPane.addTab( "Alarm", new JPanel() );
+        add(tabbedPane);
 
         //utworzenie ramki
         setTitle(nazwaAplikacji);
@@ -76,15 +89,6 @@ public class SmartHome extends JFrame {
         setLocationRelativeTo(null);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-        // Dodanie zakladek
-        tabbedPane = new JTabbedPane();
-        tabbedPane.setBounds(653,40,639,573);
-        JPanel[] pokoje = {pokojA, pokojB ,pokojC, pokojD, pokojE};
-        tabbedPane.addTab( "Oswietlenie", new TabOswietlenie(pokoje) );
-        tabbedPane.addTab( "Temperatura", new JPanel() );
-        tabbedPane.addTab( "Okna/drzwi", new JPanel() );
-        tabbedPane.addTab( "Alarm", new JPanel() );
-        add(tabbedPane);
     }
 
     public static void main(String[] args) {
