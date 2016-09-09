@@ -1,8 +1,8 @@
 package com.marpolbr;
 
-import javafx.scene.control.Tab;
-
 import javax.swing.*;
+import javax.swing.event.ChangeEvent;
+import javax.swing.event.ChangeListener;
 import java.awt.*;
 //TODO:Zrobic zeby ikony zmianialy sie z wartoscia suwaka
 public class TabOswietlenie extends JPanel {
@@ -13,31 +13,74 @@ public class TabOswietlenie extends JPanel {
     public static final int wysokoscCheckboxa  = 20;
     public static final int szerokoscCheckboxa = 120;
     public static final int yPozycjaCheckboxa  = 20;
-    public static final int yOdstepCheckboxa   = 50;
+    public static final int yOdstepCheckboxa   = 70;
 
     JPanel[] pokoje;
+
+    //Suwaki
+    public static final int dlugoscSuwaka = 300;
+    public static final int wysokoscSuwaka = 50;
+    public static final int minimumSuwakaNatezenia = 0;
+    public static final int maximumSuwakaNatezenia = 100;
+    public static final int defaultSuwakaNatezenia = 0;
+    public static final int podzialkaDrobna = 2;
+    public static final int podzialkaGlowna = 20;
 
     //Ikony
     public static final int xRozmiarIkony = 40;
     public static final int yRozmiarIkony = 40;
+    public static final int xPozycjaIkonyNatezeniaSwiatla = szerokoscCheckboxa + xPoczatekOpcji + dlugoscSuwaka + 10;
     private ImageIcon noLight;
     private ImageIcon lowLight;
     private ImageIcon mediumLight;
     private ImageIcon highLight;
     private ImageIcon maximumLight;
 
-    //Suwaki
-    public static final int dlugoscSuwaka = 300;
-    public static final int minimumSuwakaNatezenia = 0;
-    public static final int maximumSuwakaNatezenia = 100;
-    public static final int defaultSuwakaNatezenia = 0;
-
-
     public TabOswietlenie(JPanel[] pokoje){
         this.pokoje = pokoje;
         this.setLayout(null);
         zaladujObrazyNatezenia();
         dodajListePokoiOswietlenia();
+//------------------------------------------------------------------------------------------------------
+        //TEST do zmiany ikonek //TODO: Umiescic wszystko w ZmieniaczIkonOswietlenia
+        JSlider suwak = new JSlider(0,255,0);
+        suwak.setBounds(200,400,200,50);
+        //suwak.setBackground(Color.RED);
+        suwak.setOpaque(true);
+        suwak.setMajorTickSpacing(50);
+        suwak.setMinorTickSpacing(2);
+        suwak.setPaintLabels(true);
+        suwak.setPaintTicks(true);
+        add(suwak);
+        JLabel ikonaTestowa = new JLabel();
+        ikonaTestowa.setIcon(noLight);
+        ikonaTestowa.setBounds(400, 400, 200, 50);
+        add(ikonaTestowa);
+
+        suwak.addChangeListener(new ChangeListener() {
+            @Override
+            public void stateChanged(ChangeEvent e) {
+                JSlider zrodlo = (JSlider) e.getSource();
+                suwak.setBackground(new Color(255,255,255-zrodlo.getValue()));
+            }
+        });
+
+        suwak.addChangeListener((ChangeEvent event) -> {
+            int wartoscSuwaka = suwak.getValue();
+
+            if (wartoscSuwaka == 0) {
+                ikonaTestowa.setIcon(noLight);
+            } else if (wartoscSuwaka > 0 && wartoscSuwaka <= 85) {
+                ikonaTestowa.setIcon(lowLight);
+            } else if (wartoscSuwaka > 85 && wartoscSuwaka <= 170) {
+                ikonaTestowa.setIcon(mediumLight);
+            } else if (wartoscSuwaka > 170 && wartoscSuwaka <= 254) {
+                ikonaTestowa.setIcon(highLight);
+            }else {
+                ikonaTestowa.setIcon(maximumLight);
+            }
+        });
+//---------------------------------------------------------------------------------------------------------
 
 
     }
@@ -54,16 +97,16 @@ public class TabOswietlenie extends JPanel {
                     wysokoscCheckboxa,
                     pokoje[i]);
 
-            stworzNatezenieSwiatla(
-                    szerokoscCheckboxa+xPoczatekOpcji,
+            stworzSuwakNatezeniaSwiatla(
+                    szerokoscCheckboxa + xPoczatekOpcji,
                     yPozycjaCheckboxa + yOdstepCheckboxa * i,
                     dlugoscSuwaka,
-                    wysokoscCheckboxa
+                    wysokoscSuwaka
             );
 
-            stworzIkoneNatezenia(
-                    szerokoscCheckboxa+xPoczatekOpcji+dlugoscSuwaka,
-                    yOdstepCheckboxa * i,
+            stworzIkoneNatezeniaSwiatla(
+                    xPozycjaIkonyNatezeniaSwiatla,
+                    yPozycjaCheckboxa + yOdstepCheckboxa * i,
                     xRozmiarIkony,
                     yRozmiarIkony
             );
@@ -78,14 +121,19 @@ public class TabOswietlenie extends JPanel {
         checkBox.addItemListener(new WlacznikSwiatla(pokoj));
     }
 
-    public void stworzNatezenieSwiatla(int x1, int y1, int xOkno, int yOkno){
+    public void stworzSuwakNatezeniaSwiatla(int x1, int y1, int xOkno, int yOkno){
         JSlider suwakOswietlenia = new JSlider(minimumSuwakaNatezenia,maximumSuwakaNatezenia,defaultSuwakaNatezenia);
         suwakOswietlenia.setBounds(x1,y1,xOkno,yOkno);
       //suwakOswietlenia.setBackground(Color.RED);
+        suwakOswietlenia.setPaintLabels(true);
+        suwakOswietlenia.setMinorTickSpacing(podzialkaDrobna);
+        suwakOswietlenia.setMajorTickSpacing(podzialkaGlowna);
+        suwakOswietlenia.setPaintTicks(true);
         add(suwakOswietlenia);
+        suwakOswietlenia.addChangeListener(new ZmieniaczIkonOswietlenia());
     }
 
-    public void stworzIkoneNatezenia(int x1, int y1, int xOkno, int yOkno){
+    public void stworzIkoneNatezeniaSwiatla(int x1, int y1, int xOkno, int yOkno){
         JLabel ikonaNatezenia = new JLabel();
         ikonaNatezenia.setIcon(noLight);
         ikonaNatezenia.setBounds(x1,y1,xOkno,yOkno);

@@ -135,7 +135,7 @@ public class SmartHome extends JFrame {
         JLabel nazwaOkna = new JLabel(nazwa);
         nazwaOkna.setFont(duzyNapis);
         nazwaOkna.setBounds(x1, yDuzyNapis, x2, wysokoscDuzyNapis);
-        nazwaOkna.setBackground(kolorOkien);
+      //nazwaOkna.setBackground(kolorOkien);
         nazwaOkna.setOpaque(true); //mo¿liwoœæ ustawienia koloru, domyœlnie jest transparentny
         add(nazwaOkna);
     }

@@ -20,6 +20,7 @@
       <w>domyslny</w>
       <w>domyślnie</w>
       <w>dotyczace</w>
+      <w>drobna</w>
       <w>drugiego</w>
       <w>drzwi</w>
       <w>duzy</w>
@@ -27,9 +28,12 @@
       <w>dzielaca</w>
       <w>ekranu</w>
       <w>funkcjonuje</w>
+      <w>glowna</w>
       <w>gorne</w>
+      <w>ikon</w>
       <w>ikona</w>
       <w>ikone</w>
+      <w>ikonek</w>
       <w>ikony</w>
       <w>informacje</w>
       <w>inteligentny</w>
@@ -74,6 +78,7 @@
       <w>oswietlenie</w>
       <w>pierwszego</w>
       <w>poczatek</w>
+      <w>podzialka</w>
       <w>podział</w>
       <w>podziel</w>
       <w>pokoi</w>
@@ -104,9 +109,11 @@
       <w>szerokosc</w>
       <w>tabsy</w>
       <w>temperatura</w>
+      <w>testowa</w>
       <w>testowy</w>
       <w>transparentny</w>
       <w>tutaj</w>
+      <w>umiescic</w>
       <w>umieszczone</w>
       <w>ustaw</w>
       <w>ustawienia</w>
@@ -114,12 +121,14 @@
       <w>usunac</w>
       <w>utworzenie</w>
       <w>uzytkownik</w>
+      <w>wartosc</w>
       <w>wartoscia</w>
       <w>widok</w>
       <w>wlacz</w>
       <w>wlacznik</w>
       <w>wlaczone</w>
       <w>wspolrzedne</w>
+      <w>wszystko</w>
       <w>wymiary</w>
       <w>wysokosc</w>
       <w>zakladce</w>
@@ -128,9 +137,13 @@
       <w>zaladuj</w>
       <w>zawierac</w>
       <w>zeby</w>
+      <w>zmianiacz</w>
       <w>zmianialy</w>
+      <w>zmiany</w>
+      <w>zmieniacz</w>
       <w>znajduje</w>
       <w>zrobic</w>
+      <w>zrodlo</w>
     </words>
   </dictionary>
 </component>
