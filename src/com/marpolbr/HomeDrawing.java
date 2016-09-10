@@ -61,13 +61,14 @@ public class HomeDrawing extends JPanel {
 
         Graphics2D home = (Graphics2D) g;
 
-        home.setStroke(new BasicStroke(4));
+        home.setStroke(new BasicStroke(2));
         home.setColor(Color.BLACK);
-        home.drawRect(x1Sypialnia, y1Sypialnia, x2Sypialnia, y2Sypialnia);
-        home.drawRect(x1Lazienka, y1Lazienka, x2Lazienka, y2Lazienka);
-        home.drawRect(x1Salon, y1Salon, x2Salon, y2Salon);
-        home.drawRect(x1Przedpokoj, y1Przedpokoj, x2Przedpokoj, y2Przedpokoj);
-        home.drawRect(x1Kuchnia, y1Kuchnia, x2Kuchnia, y2Kuchnia);
+        home.drawRect(x1Sypialnia, y1Sypialnia, x2Sypialnia+x2Lazienka,y2Sypialnia+y2Salon);
+        //home.drawRect(x1Sypialnia, y1Sypialnia, x2Sypialnia, y2Sypialnia);
+        //home.drawRect(x1Lazienka, y1Lazienka, x2Lazienka, y2Lazienka);
+        //home.drawRect(x1Salon, y1Salon, x2Salon, y2Salon);
+        //home.drawRect(x1Przedpokoj, y1Przedpokoj, x2Przedpokoj, y2Przedpokoj);
+        //home.drawRect(x1Kuchnia, y1Kuchnia, x2Kuchnia, y2Kuchnia);
 
         //NAZWY POKOI
         setLayout(null);

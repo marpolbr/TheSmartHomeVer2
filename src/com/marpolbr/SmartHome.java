@@ -4,8 +4,6 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.ItemEvent;
-import java.awt.event.ItemListener;
 
 
 public class SmartHome extends JFrame {
@@ -33,11 +31,11 @@ public class SmartHome extends JFrame {
 
 
     // Jpanele
-    JPanel pokojA;
-    JPanel pokojB;
-    JPanel pokojC;
-    JPanel pokojD;
-    JPanel pokojE;
+    JPanel pokojASypialnia;
+    JPanel pokojBLazienka;
+    JPanel pokojCSalon;
+    JPanel pokojDPrzedpokoj;
+    JPanel pokojEKuchnia;
 
     // Zakladki
     private	JTabbedPane tabbedPane;
@@ -57,25 +55,36 @@ public class SmartHome extends JFrame {
         dodajNazwyOkien(nazwaPierwszegoOkna,(xSrodekEkranu/2-dlugoscNazwyPierwszegoOkna/2), dlugoscNazwyPierwszegoOkna);
         dodajNazwyOkien(nazwaDrugiegoOkna,(xRozmiarOkna-xSrodekEkranu/2-dlugoscNazwyDrugiegoOkna/2), dlugoscNazwyDrugiegoOkna);
 
-        // Widok mieszkania (rysowanie domu)
+        // Widok mieszkania (rysowanie domu - JPanel Okna Symulacji)
         HomeDrawing rzutDomu = new HomeDrawing();
         add(rzutDomu);
+        rzutDomu.setLayout(null);
         rzutDomu.setBounds(0, 30, xRozmiarOkna / 2, yRozmiarOkna);
         rzutDomu.setBackground(kolorTla);
 
-        pokojA = dodajPokoj(pokojA, rzutDomu);
-        pokojB = dodajPokoj(pokojB, rzutDomu);
-        pokojC = dodajPokoj(pokojC, rzutDomu);
-        pokojD = dodajPokoj(pokojD, rzutDomu);
-        pokojE = dodajPokoj(pokojE, rzutDomu);
-
+        //TODO:Dodano rzutDomu.setLayout(null) setBounds oraz setBorder do pokoi. Umiescic to w klasie Pokoj
+        pokojASypialnia = dodajPokoj(pokojASypialnia, rzutDomu);
+        pokojASypialnia.setBounds(HomeDrawing.x1Sypialnia, HomeDrawing.y1Sypialnia, HomeDrawing.x2Sypialnia, HomeDrawing.y2Sypialnia);
+        pokojASypialnia.setBorder(BorderFactory.createLineBorder(Color.BLACK));
+        pokojBLazienka = dodajPokoj(pokojBLazienka, rzutDomu);
+        pokojBLazienka.setBounds(HomeDrawing.x1Lazienka, HomeDrawing.y1Lazienka, HomeDrawing.x2Lazienka, HomeDrawing.y2Lazienka);
+        pokojBLazienka.setBorder(BorderFactory.createLineBorder(Color.BLACK));
+        pokojCSalon = dodajPokoj(pokojCSalon, rzutDomu);
+        pokojCSalon.setBounds(HomeDrawing.x1Salon, HomeDrawing.y1Salon, HomeDrawing.x2Salon, HomeDrawing.y2Salon);
+        pokojCSalon.setBorder(BorderFactory.createLineBorder(Color.BLACK));
+        pokojDPrzedpokoj = dodajPokoj(pokojDPrzedpokoj, rzutDomu);
+        pokojDPrzedpokoj.setBounds(HomeDrawing.x1Przedpokoj, HomeDrawing.y1Przedpokoj, HomeDrawing.x2Przedpokoj, HomeDrawing.y2Przedpokoj);
+        pokojDPrzedpokoj.setBorder(BorderFactory.createLineBorder(Color.BLACK));
+        pokojEKuchnia = dodajPokoj(pokojEKuchnia, rzutDomu);
+        pokojEKuchnia.setBounds(HomeDrawing.x1Kuchnia, HomeDrawing.y1Kuchnia, HomeDrawing.x2Kuchnia, HomeDrawing.y2Kuchnia);
+        pokojEKuchnia.setBorder(BorderFactory.createLineBorder(Color.BLACK));
 
 
 
         // Dodanie zakladek
         tabbedPane = new JTabbedPane();
         tabbedPane.setBounds(653,40,639,573);
-        JPanel[] pokoje = {pokojA, pokojB ,pokojC, pokojD, pokojE};
+        JPanel[] pokoje = {pokojASypialnia, pokojBLazienka, pokojCSalon, pokojDPrzedpokoj, pokojEKuchnia};
         tabbedPane.addTab( "Oswietlenie", new TabOswietlenie(pokoje));
         tabbedPane.addTab( "Temperatura",new TabTemperatura());
         tabbedPane.addTab( "Okna", new JPanel() );

@@ -4,6 +4,7 @@ import javax.swing.*;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 import java.awt.*;
+
 //TODO:Zrobic zeby ikony zmianialy sie z wartoscia suwaka
 public class TabOswietlenie extends JPanel {
 
@@ -12,7 +13,7 @@ public class TabOswietlenie extends JPanel {
     // Checkboxy (TODO: jako procenty?)
     public static final int wysokoscCheckboxa  = 20;
     public static final int szerokoscCheckboxa = 120;
-    public static final int yPozycjaCheckboxa  = 20;
+    public static final int yPozycjaCheckboxa  = 40;
     public static final int yOdstepCheckboxa   = 70;
 
     JPanel[] pokoje;
@@ -81,7 +82,11 @@ public class TabOswietlenie extends JPanel {
             }
         });
 //---------------------------------------------------------------------------------------------------------
-
+        JLabel nazwaCzujnikRuchu = new JLabel("CZUJNIK RUCHU");
+        nazwaCzujnikRuchu.setOpaque(true);
+        nazwaCzujnikRuchu.setBounds(510,0,100,20);
+        //nazwaCzujnikRuchu.setBackground(Color.RED);
+        add(nazwaCzujnikRuchu);
 
     }
 
