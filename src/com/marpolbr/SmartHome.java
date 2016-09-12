@@ -87,8 +87,8 @@ public class SmartHome extends JFrame {
         JPanel[] pokoje = {pokojASypialnia, pokojBLazienka, pokojCSalon, pokojDPrzedpokoj, pokojEKuchnia};
         tabbedPane.addTab( "Oswietlenie", new TabOswietlenie(pokoje));
         tabbedPane.addTab( "Temperatura",new TabTemperatura());
-        tabbedPane.addTab( "Okna", new JPanel() );
-        tabbedPane.addTab( "Alarm", new JPanel() );
+        tabbedPane.addTab( "Okna", new TabOkna() ); //tabbedPane.addTab( "Okna", new JPanel() );
+        tabbedPane.addTab( "Alarm", new TabAlarm() );
         add(tabbedPane);
 
         //utworzenie ramki
