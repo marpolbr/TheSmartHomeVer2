@@ -73,12 +73,29 @@ public class HomeDrawing extends JPanel {
         //NAZWY POKOI
         setLayout(null);
 
-        nazwaPokoju("SYPIALNIA",(x1Sypialnia+x2Sypialnia/2)- g.getFontMetrics().stringWidth("SYPIALNIA")/2,yGornePolozenieNazwPokoi,dlugoscNazwySypialnia,wysokoscNazwaPokoju);
-        nazwaPokoju("LAZIENKA",(x1Lazienka+x2Lazienka/2)- g.getFontMetrics().stringWidth("LAZIENKA")/2,yGornePolozenieNazwPokoi,dlugoscNazwyLazienka,wysokoscNazwaPokoju);
-        nazwaPokoju("SALON",(x1Salon+x2Salon/2)- g.getFontMetrics().stringWidth("SALON")/2,yDolnePolozenieNazwPokoi,dlugoscNazwySalon,wysokoscNazwaPokoju);
-        nazwaPokoju("PRZEDPOKOJ", (x1Przedpokoj+x2Przedpokoj/2)- g.getFontMetrics().stringWidth("PRZEDPOKOJ")/2, yDolnePolozenieNazwPokoi, dlugoscNazwyPrzedpokoj, wysokoscNazwaPokoju);
-        nazwaPokoju("KUCHNIA",(x1Kuchnia+x2Kuchnia/2)- g.getFontMetrics().stringWidth("KUCHNIA")/2,yDolnePolozenieNazwPokoi,dlugoscNazwyKuchnia,wysokoscNazwaPokoju);
+        stworzNazwaPokoju("SYPIALNIA", (x1Sypialnia + x2Sypialnia / 2) - g.getFontMetrics().stringWidth("SYPIALNIA") / 2, yGornePolozenieNazwPokoi, dlugoscNazwySypialnia, wysokoscNazwaPokoju);
+        stworzNazwaPokoju("LAZIENKA", (x1Lazienka + x2Lazienka / 2) - g.getFontMetrics().stringWidth("LAZIENKA") / 2, yGornePolozenieNazwPokoi, dlugoscNazwyLazienka, wysokoscNazwaPokoju);
+        stworzNazwaPokoju("SALON", (x1Salon + x2Salon / 2) - g.getFontMetrics().stringWidth("SALON") / 2, yDolnePolozenieNazwPokoi, dlugoscNazwySalon, wysokoscNazwaPokoju);
+        stworzNazwaPokoju("PRZEDPOKOJ", (x1Przedpokoj + x2Przedpokoj / 2) - g.getFontMetrics().stringWidth("PRZEDPOKOJ") / 2, yDolnePolozenieNazwPokoi, dlugoscNazwyPrzedpokoj, wysokoscNazwaPokoju);
+        stworzNazwaPokoju("KUCHNIA", (x1Kuchnia + x2Kuchnia / 2) - g.getFontMetrics().stringWidth("KUCHNIA") / 2, yDolnePolozenieNazwPokoi, dlugoscNazwyKuchnia, wysokoscNazwaPokoju);
 
+        //numery okien
+        //Sypialnia
+        stworzNumerOkna("1",50,140,10,15);
+        stworzNumerOkna("2",120,50,10,15);
+        stworzNumerOkna("3",270,50,10,15);
+        //Lazienka
+        stworzNumerOkna("1",470,50,10,15);
+        stworzNumerOkna("2",580,140,10,15);
+        //Salon
+        stworzNumerOkna("1",50,350,10,15);
+        stworzNumerOkna("2",50,500,10,15);
+        stworzNumerOkna("3",100,570,10,15);
+        stworzNumerOkna("4",220,570,10,15);
+        //Kuchnia
+        stworzNumerOkna("1",500,570,10,15);
+        stworzNumerOkna("2",580,350,10,15);
+        stworzNumerOkna("3",580,500,10,15);
 
     }
 
@@ -90,13 +107,22 @@ public class HomeDrawing extends JPanel {
 
 
     // metoda do dodawania nazw pokoi
-    public void nazwaPokoju(String napis, int x1, int y1, int x2,int y2){
+    public void stworzNazwaPokoju(String napis, int x1, int y1, int x2, int y2){
         JLabel nazwaPokoju = new JLabel(napis);
         add(nazwaPokoju);
         nazwaPokoju.setFont(new Font("Serif", Font.BOLD, 12));
         nazwaPokoju.setBounds(x1,y1,x2,y2);
-        //nazwaPokoju.setBackground(new Color(143, 225, 231));
+        nazwaPokoju.setBackground(Color.LIGHT_GRAY);
         nazwaPokoju.setOpaque(true);
+    }
+
+    public void stworzNumerOkna(String numer,int x1, int y1, int x2,int y2){
+        JLabel numerOkna = new JLabel(numer);
+        add(numerOkna);
+        numerOkna.setFont(new Font("Serif", Font.BOLD, 12));
+        numerOkna.setBounds(x1, y1, x2, y2);
+        numerOkna.setBackground(Color.LIGHT_GRAY);
+        numerOkna.setOpaque(true);
     }
 
 

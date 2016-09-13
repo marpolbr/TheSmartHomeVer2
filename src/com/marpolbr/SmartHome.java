@@ -48,8 +48,8 @@ public class SmartHome extends JFrame {
         setLayout(null);
 
         // Ustawienie przycisków
-        dodajInformacje();
-        dodajStart();
+        //dodajInformacje();
+        //dodajStart();
 
         //Nazwy okien
         dodajNazwyOkien(nazwaPierwszegoOkna,(xSrodekEkranu/2-dlugoscNazwyPierwszegoOkna/2), dlugoscNazwyPierwszegoOkna);
@@ -83,11 +83,11 @@ public class SmartHome extends JFrame {
 
         // Dodanie zakladek
         tabbedPane = new JTabbedPane();
-        tabbedPane.setBounds(653,40,639,573);
+        tabbedPane.setBounds(653,40,639,630);
         JPanel[] pokoje = {pokojASypialnia, pokojBLazienka, pokojCSalon, pokojDPrzedpokoj, pokojEKuchnia};
         tabbedPane.addTab( "Oswietlenie", new TabOswietlenie(pokoje));
         tabbedPane.addTab( "Temperatura",new TabTemperatura());
-        tabbedPane.addTab( "Okna", new TabOkna() ); //tabbedPane.addTab( "Okna", new JPanel() );
+        tabbedPane.addTab( "Okna/Rolety", new TabOkna() ); //tabbedPane.addTab( "Okna", new JPanel() );
         tabbedPane.addTab( "Alarm", new TabAlarm() );
         add(tabbedPane);
 
@@ -135,7 +135,7 @@ public class SmartHome extends JFrame {
 
     public JPanel dodajPokoj(JPanel pokoj, JPanel dom){
         pokoj = new JPanel();
-        pokoj.setBackground(Color.RED);
+        pokoj.setBackground(Color.LIGHT_GRAY);
         dom.add(pokoj);
         return pokoj;
     }

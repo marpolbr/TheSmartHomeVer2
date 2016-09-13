@@ -52,11 +52,11 @@ public class TabOswietlenie extends JPanel {
         suwak.setMinorTickSpacing(2);
         suwak.setPaintLabels(true);
         suwak.setPaintTicks(true);
-        add(suwak);
+        //add(suwak);
         JLabel ikonaTestowa = new JLabel();
         ikonaTestowa.setIcon(noLight);
         ikonaTestowa.setBounds(400, 400, 200, 50);
-        add(ikonaTestowa);
+        //add(ikonaTestowa);
 
         suwak.addChangeListener(new ChangeListener() {
             @Override

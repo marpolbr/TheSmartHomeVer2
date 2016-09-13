@@ -2,6 +2,7 @@
   <dictionary name="Marcin">
     <words>
       <w>absolutna</w>
+      <w>aktualna</w>
       <w>aktualnie</w>
       <w>aktualny</w>
       <w>aplikacja</w>
@@ -32,6 +33,7 @@
       <w>funkcjonuje</w>
       <w>glowna</w>
       <w>gorne</w>
+      <w>grzejnik</w>
       <w>ikon</w>
       <w>ikona</w>
       <w>ikone</w>
@@ -40,9 +42,13 @@
       <w>informacje</w>
       <w>inteligentny</w>
       <w>jako</w>
+      <w>jednostka</w>
+      <w>jednostke</w>
       <w>jezeli</w>
       <w>jpanele</w>
       <w>klasie</w>
+      <w>klima</w>
+      <w>klimatyzacja</w>
       <w>kolejnych</w>
       <w>kolor</w>
       <w>koloru</w>
@@ -64,9 +70,12 @@
       <w>natezenie</w>
       <w>nazw</w>
       <w>nazwa</w>
+      <w>nazwe</w>
       <w>nazwy</w>
       <w>niezgodnie</w>
       <w>nizej</w>
+      <w>numer</w>
+      <w>numery</w>
       <w>obrazow</w>
       <w>obrazy</w>
       <w>odjac</w>
@@ -96,6 +105,7 @@
       <w>przycisk</w>
       <w>przycisków</w>
       <w>ramki</w>
+      <w>rolety</w>
       <w>rozmiar</w>
       <w>ruchu</w>
       <w>rysowanie</w>
@@ -105,6 +115,7 @@
       <w>stworz</w>
       <w>suwak</w>
       <w>suwaka</w>
+      <w>suwaki</w>
       <w>swiatla</w>
       <w>swiatlo</w>
       <w>symulacji</w>
@@ -112,6 +123,7 @@
       <w>szerokosc</w>
       <w>tabsy</w>
       <w>temperatura</w>
+      <w>temperatury</w>
       <w>testowa</w>
       <w>testowy</w>
       <w>transparentny</w>
@@ -126,14 +138,19 @@
       <w>uzytkownik</w>
       <w>wartosc</w>
       <w>wartoscia</w>
+      <w>wentylacja</w>
       <w>widok</w>
+      <w>wilgotnosc</w>
+      <w>wilgotnosci</w>
       <w>wlacz</w>
       <w>wlacznik</w>
       <w>wlaczone</w>
       <w>wspolrzedne</w>
+      <w>wszystkie</w>
       <w>wszystko</w>
       <w>wymiary</w>
       <w>wysokosc</w>
+      <w>zadana</w>
       <w>zakladce</w>
       <w>zakladek</w>
       <w>zakladki</w>
